@@ -18,7 +18,7 @@ del archivo_texto
 archivo_datos = open('datos', 'w')
 datos = ''
 for i in diccionario_palabras:
-    datos += i + ':' + str(diccionario_palabras[i]) + '\n'
+    datos += (i + ':' + str(diccionario_palabras[i]) + '\n')
 archivo_datos.write(datos)
 del datos
 del archivo_datos

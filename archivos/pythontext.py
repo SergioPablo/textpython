@@ -14,8 +14,11 @@ for linea in archivo_texto:
             else: diccionario_palabras[palabra_actual] += 1
             palabra_actual = ''
 archivo_texto.close()
+del archivo_texto
 archivo_datos = open('datos', 'w')
 datos = ''
 for i in diccionario_palabras:
     datos += i + ':' + str(diccionario_palabras[i]) + '\n'
 archivo_datos.write(datos)
+del datos
+del archivo_datos

@@ -46,4 +46,4 @@ for palabra in diccionario_transiciones:
 archivo_transiciones.write(transiciones)
 archivo_transiciones.close()
 del transiciones
-del diccionario_transiciones
+del diccionario_transiciones #Borre variables

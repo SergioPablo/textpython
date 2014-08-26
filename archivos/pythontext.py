@@ -4,15 +4,15 @@ __author__ = 'Sergio'
 archivo_texto = open('texto')
 diccionario_palabras = dict()
 diccionario_transiciones = dict()
-caracteres_especiales = [' ', ',', '.', '', '+', '-', '=', '"', '/', '(', ')',';', ':']
+caracteres_especiales = ['  ' ,' ', '-', '=', '"', '/', '(', ')',';', ':']
 palabra_anterior = '' #Acá declaré la palabra anterior fuera del "for" para que después a medida que pasen las lineas no la borre
-for linea in archivo_texto:
-    palabra_actual = ''
 
-    for letra in linea.strip():
-        if letra not in caracteres_especiales:
-            palabra_actual += letra
-        else:
+
+for linea in archivo_texto:
+
+    for palabra_actual in linea.strip().split(' '):
+        if palabra_actual != '':
+
             if palabra_actual not in diccionario_palabras:
                 diccionario_palabras[palabra_actual] = 1
             else:
@@ -28,8 +28,6 @@ for linea in archivo_texto:
             palabra_actual = ''
 
 
-del diccionario_palabras['']
-del diccionario_transiciones[''] #Bug del espacio vacío que elimino
 archivo_texto.close()
 del archivo_texto
 archivo_datos = open('datos', 'w')

@@ -3,7 +3,7 @@
 import random #Importo modulo random
 
 
-archivo_texto = open(archivo_input) #Abrir archivo de texto
+archivo_texto = open('moby.txt') #Abrir archivo de texto
 diccionario_transiciones = dict() #Crear diccionario
 palabra_anterior = '' #Acá declaré la palabra anterior fuera del "for" para que después a medida que pasen las lineas no la borre
 
@@ -41,7 +41,7 @@ for linea in archivo_texto:
                 palabra_anterior = palabra_actual #Ahora la palabra actual pasará a ser la palabra anterior
 
 
-archivo_nuevo = open(archivo_output,'w') #Crea un archivo nuevo
+archivo_nuevo = open('archivo_nuevo.txt','w') #Crea un archivo nuevo
 palabra_nueva = random.choice(list(diccionario_transiciones)) #Selecciona cualquier palabra del diccionario
 
 #Dentro de las condiciones del texto, aparece que debe tener de 4 a 10 parrafos de 4 a 10 lineas y que cada linea no debe tener más de 50 palabras.
